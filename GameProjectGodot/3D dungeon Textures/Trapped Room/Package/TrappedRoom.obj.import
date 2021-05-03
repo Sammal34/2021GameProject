@@ -1,0 +1,19 @@
+[remap]
+
+importer="wavefront_obj"
+type="Mesh"
+path="res://.import/TrappedRoom.obj-4a351c04bb3a40e41b8223dd2afed60f.mesh"
+
+[deps]
+
+files=[ "res://.import/TrappedRoom.obj-4a351c04bb3a40e41b8223dd2afed60f.mesh" ]
+
+source_file="res://3D dungeon Textures/Trapped Room/Package/TrappedRoom.obj"
+dest_files=[ "res://.import/TrappedRoom.obj-4a351c04bb3a40e41b8223dd2afed60f.mesh", "res://.import/TrappedRoom.obj-4a351c04bb3a40e41b8223dd2afed60f.mesh" ]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3( 1, 1, 1 )
+offset_mesh=Vector3( 0, 0, 0 )
+optimize_mesh=true

@@ -1,0 +1,19 @@
+[remap]
+
+importer="wavefront_obj"
+type="Mesh"
+path="res://.import/Thirsty Corridor.obj-e05de400d292c95e187de4aeada95a4c.mesh"
+
+[deps]
+
+files=[ "res://.import/Thirsty Corridor.obj-e05de400d292c95e187de4aeada95a4c.mesh" ]
+
+source_file="res://3D dungeon Textures/Thirsty Corridor/Package/Thirsty Corridor.obj"
+dest_files=[ "res://.import/Thirsty Corridor.obj-e05de400d292c95e187de4aeada95a4c.mesh", "res://.import/Thirsty Corridor.obj-e05de400d292c95e187de4aeada95a4c.mesh" ]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3( 1, 1, 1 )
+offset_mesh=Vector3( 0, 0, 0 )
+optimize_mesh=true

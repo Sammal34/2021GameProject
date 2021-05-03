@@ -1,0 +1,19 @@
+[remap]
+
+importer="wavefront_obj"
+type="Mesh"
+path="res://.import/Princess  Chamber.obj-0a58a62ccbbfbd168745b961453c6386.mesh"
+
+[deps]
+
+files=[ "res://.import/Princess  Chamber.obj-0a58a62ccbbfbd168745b961453c6386.mesh" ]
+
+source_file="res://3D dungeon Textures/Princess Chamber/Package/Princess  Chamber.obj"
+dest_files=[ "res://.import/Princess  Chamber.obj-0a58a62ccbbfbd168745b961453c6386.mesh", "res://.import/Princess  Chamber.obj-0a58a62ccbbfbd168745b961453c6386.mesh" ]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3( 1, 1, 1 )
+offset_mesh=Vector3( 0, 0, 0 )
+optimize_mesh=true

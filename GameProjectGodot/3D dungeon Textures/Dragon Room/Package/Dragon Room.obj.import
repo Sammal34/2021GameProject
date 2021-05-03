@@ -1,0 +1,19 @@
+[remap]
+
+importer="wavefront_obj"
+type="Mesh"
+path="res://.import/Dragon Room.obj-e08a7a3e9f8a196e1a37aa9f697edaf5.mesh"
+
+[deps]
+
+files=[ "res://.import/Dragon Room.obj-e08a7a3e9f8a196e1a37aa9f697edaf5.mesh" ]
+
+source_file="res://3D dungeon Textures/Dragon Room/Package/Dragon Room.obj"
+dest_files=[ "res://.import/Dragon Room.obj-e08a7a3e9f8a196e1a37aa9f697edaf5.mesh", "res://.import/Dragon Room.obj-e08a7a3e9f8a196e1a37aa9f697edaf5.mesh" ]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3( 1, 1, 1 )
+offset_mesh=Vector3( 0, 0, 0 )
+optimize_mesh=true

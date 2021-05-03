@@ -1,0 +1,19 @@
+[remap]
+
+importer="wavefront_obj"
+type="Mesh"
+path="res://.import/Kings Throne.obj-8d9f86da0f65b6180f263b08a38d15ff.mesh"
+
+[deps]
+
+files=[ "res://.import/Kings Throne.obj-8d9f86da0f65b6180f263b08a38d15ff.mesh" ]
+
+source_file="res://3D dungeon Textures/King Throne/Package/Kings Throne.obj"
+dest_files=[ "res://.import/Kings Throne.obj-8d9f86da0f65b6180f263b08a38d15ff.mesh", "res://.import/Kings Throne.obj-8d9f86da0f65b6180f263b08a38d15ff.mesh" ]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3( 1, 1, 1 )
+offset_mesh=Vector3( 0, 0, 0 )
+optimize_mesh=true
