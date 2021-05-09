@@ -9,11 +9,16 @@ const ACCELERATION = 3
 const DE_ACCELERATION = 5
 
 
+var jump_speed = 6  # jump strength
+var spin = 0.1  # rotation speed
+
+var jump = false
+
+
 
 # Declare member variables here. Examples:
 # var a = 2
 # var b = "text"
-
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -27,6 +32,7 @@ func _ready():
 
 
 func _physics_process(delta):
+	
 	var dir = Vector3() 
 	
 	if(Input.is_action_pressed("move_bw")):
@@ -37,7 +43,6 @@ func _physics_process(delta):
 		dir += -camera.basis[0]
 	if(Input.is_action_pressed("move_r")):
 		dir += camera.basis[0]
-
 	dir.y = 0
 	dir = dir.normalized()
 	
@@ -57,6 +62,12 @@ func _physics_process(delta):
 	velocity.z = hv.z
 	
 	velocity = move_and_slide(velocity, Vector3(0,1,0))
-	
-	
-	
+	jump = false
+	if Input.is_action_just_pressed("Jump"):
+		jump = true
+	if jump and is_on_floor():
+		velocity.y = jump_speed
+
+
+
+
