@@ -39,7 +39,9 @@ shape = SubResource( 2 )
 transform = Transform( 1, 0, 0, 0, 0.5, 0.866025, 0, -0.866025, 0.5, -1, 36, 7 )
 
 [node name="Camera" type="Camera" parent="."]
-transform = Transform( 1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 2, 5, 1 )
+transform = Transform( 1, 0, 0, 0, 0.866025, 0.5, 0, -0.5, 0.866025, 2, 5, 5 )
+fov = 69.9
+near = 0.21
 
 [node name="Spatial" type="Spatial" parent="."]
 

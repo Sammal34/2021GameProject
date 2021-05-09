@@ -1,6 +1,6 @@
 extends KinematicBody
 
-var gravity = -9.8
+var gravity = -25
 var velocity = Vector3()
 var camera
 
@@ -35,9 +35,9 @@ func _physics_process(delta):
 	
 	var dir = Vector3() 
 	
-	if(Input.is_action_pressed("move_bw")):
-		dir += -camera.basis[2]
 	if(Input.is_action_pressed("move_fw")):
+		dir += -camera.basis[2]
+	if(Input.is_action_pressed("move_bw")):
 		dir += camera.basis[2]
 	if(Input.is_action_pressed("move_l")):
 		dir += -camera.basis[0]
