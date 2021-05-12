@@ -70,4 +70,7 @@ Jump={
 
 [rendering]
 
+quality/shading/force_vertex_shading=true
+quality/shading/force_lambert_over_burley=true
+quality/skinning/force_software_skinning=true
 environment/default_environment="res://default_env.tres"
