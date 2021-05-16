@@ -3,6 +3,8 @@ extends KinematicBody
 var gravity = -25
 var velocity = Vector3()
 var camera
+var anim_player
+var character
 
 const SPEED = 6 
 const ACCELERATION = 3
@@ -23,8 +25,9 @@ var jump = false
 # Called when the node enters the scene tree for the first time.
 func _ready():
 
-	camera = get_node("../Camera").get_global_transform()
-
+	camera = get_node("Target/Camera").get_global_transform()
+	anim_player = get_node("AnimationPlayer")
+	character = get_node(".")
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 #func _process(delta):
@@ -34,15 +37,20 @@ func _ready():
 func _physics_process(delta):
 	
 	var dir = Vector3() 
+	var is_moving = false
 	
 	if(Input.is_action_pressed("move_fw")):
 		dir += -camera.basis[2]
+		is_moving = true
 	if(Input.is_action_pressed("move_bw")):
 		dir += camera.basis[2]
+		is_moving = true
 	if(Input.is_action_pressed("move_l")):
 		dir += -camera.basis[0]
+		is_moving = true
 	if(Input.is_action_pressed("move_r")):
 		dir += camera.basis[0]
+		is_moving = true
 	dir.y = 0
 	dir = dir.normalized()
 	
@@ -62,6 +70,16 @@ func _physics_process(delta):
 	velocity.z = hv.z
 	
 	velocity = move_and_slide(velocity, Vector3(0,1,0))
+	
+	if is_moving:
+		var angle = atan2(hv.x, hv.z)
+		
+		var char_rot = character.get_rotation()
+		
+		char_rot.y = angle
+		character.set_rotation(char_rot)
+		
+	
 	jump = false
 	if Input.is_action_just_pressed("Jump"):
 		jump = true
