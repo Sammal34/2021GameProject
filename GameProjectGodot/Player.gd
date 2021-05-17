@@ -40,16 +40,16 @@ func _physics_process(delta):
 	var is_moving = false
 	
 	if(Input.is_action_pressed("move_fw")):
-		dir += -camera.basis[2]
+		dir += -camera.basis.z
 		is_moving = true
 	if(Input.is_action_pressed("move_bw")):
-		dir += camera.basis[2]
+		dir += camera.basis.z
 		is_moving = true
 	if(Input.is_action_pressed("move_l")):
-		dir += -camera.basis[0]
+		dir += -camera.basis.x
 		is_moving = true
 	if(Input.is_action_pressed("move_r")):
-		dir += camera.basis[0]
+		dir += camera.basis.x
 		is_moving = true
 	dir.y = 0
 	dir = dir.normalized()
