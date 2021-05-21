@@ -4,7 +4,7 @@ var speed = 4
 var accel_type = {"default": 40, "air": 1}
 onready var accel = accel_type["default"]
 var gravity = 20
-var jump = 5
+var jump = 6.5
 
 var cam_accel = 40
 var mouse_sense = 0.1
