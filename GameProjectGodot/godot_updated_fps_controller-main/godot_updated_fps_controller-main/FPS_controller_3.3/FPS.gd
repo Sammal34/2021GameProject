@@ -14,6 +14,13 @@ var direction = Vector3()
 var velocity = Vector3()
 var gravity_vec = Vector3()
 var movement = Vector3()
+var damage = 100
+
+
+onready var aimcast = $Head/Camera/AimCast
+onready var muzzle = $Head/Gun/Muzzle
+onready var bullet = preload("res://Bullet.tscn")
+
 
 onready var head = $Head
 onready var camera = $Head/Camera
@@ -42,31 +49,37 @@ func _process(delta):
 		
 func _physics_process(delta):
 	#get keyboard input
-	direction = Vector3.ZERO
-	var h_rot = global_transform.basis.get_euler().y
-	var f_input = Input.get_action_strength("move_bw") - Input.get_action_strength("move_fw")
-	var h_input = Input.get_action_strength("move_r") - Input.get_action_strength("move_l")
-	direction = Vector3(h_input, 0, f_input).rotated(Vector3.UP, h_rot).normalized()
+		var direction = Vector3()
+		if Input.is_action_just_pressed("fire"):
+			if aimcast.is_colliding():
+				var b = bullet.instance()
+				muzzle.add_child(b)
+				b.look_at(aimcast.get_collision_point(), Vector3.UP)
+				b.shoot = true
+		var h_rot = global_transform.basis.get_euler().y
+		var f_input = Input.get_action_strength("move_bw") - Input.get_action_strength("move_fw")
+		var h_input = Input.get_action_strength("move_r") - Input.get_action_strength("move_l")
+		direction = Vector3(h_input, 0, f_input).rotated(Vector3.UP, h_rot).normalized()
 	
 	#jumping and gravity
-	if is_on_floor():
-		snap = -get_floor_normal()
-		accel = accel_type["default"]
-		gravity_vec = Vector3.ZERO
-	else:
-		snap = Vector3.DOWN
-		accel = accel_type["air"]
-		gravity_vec += Vector3.DOWN * gravity * delta
+		if is_on_floor():
+			snap = -get_floor_normal()
+			accel = accel_type["default"]
+			gravity_vec = Vector3.ZERO
+		else:
+			snap = Vector3.DOWN
+			accel = accel_type["air"]
+			gravity_vec += Vector3.DOWN * gravity * delta
 		
-	if Input.is_action_just_pressed("Jump") and is_on_floor():
-		snap = Vector3.ZERO
-		gravity_vec = Vector3.UP * jump
+		if Input.is_action_just_pressed("Jump") and is_on_floor():
+			snap = Vector3.ZERO
+			gravity_vec = Vector3.UP * jump
 	
 	#make it move
-	velocity = velocity.linear_interpolate(direction * speed, accel * delta)
-	movement = velocity + gravity_vec
+		velocity = velocity.linear_interpolate(direction * speed, accel * delta)
+		movement = velocity + gravity_vec
 	
-	move_and_slide_with_snap(movement, snap, Vector3.UP)
+		move_and_slide_with_snap(movement, snap, Vector3.UP)
 	
 	
 	
