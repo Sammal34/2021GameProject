@@ -51,11 +51,14 @@ func _physics_process(delta):
 	#get keyboard input
 		var direction = Vector3()
 		if Input.is_action_just_pressed("fire"):
+			print("swagnus")
+			
 			if aimcast.is_colliding():
 				var b = bullet.instance()
-				muzzle.add_child(b)
+				get_tree().get_root().add_child(b)
 				b.look_at(aimcast.get_collision_point(), Vector3.UP)
 				b.shoot = true
+				print("AMONGUS")
 		var h_rot = global_transform.basis.get_euler().y
 		var f_input = Input.get_action_strength("move_bw") - Input.get_action_strength("move_fw")
 		var h_input = Input.get_action_strength("move_r") - Input.get_action_strength("move_l")
