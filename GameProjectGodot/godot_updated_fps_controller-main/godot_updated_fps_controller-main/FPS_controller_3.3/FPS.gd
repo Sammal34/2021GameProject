@@ -59,6 +59,10 @@ func _physics_process(delta):
 				b.look_at(aimcast.get_collision_point(), Vector3.UP)
 				b.shoot = true
 				print("AMONGUS")
+				var h_rot = global_transform.basis.get_euler().y
+				var f_input = Input.get_action_strength("move_bw") - Input.get_action_strength("move_fw")
+				var h_input = Input.get_action_strength("move_r") - Input.get_action_strength("move_l")
+				direction = Vector3(h_input, 0, f_input).rotated(Vector3.UP, h_rot).normalized()
 		var h_rot = global_transform.basis.get_euler().y
 		var f_input = Input.get_action_strength("move_bw") - Input.get_action_strength("move_fw")
 		var h_input = Input.get_action_strength("move_r") - Input.get_action_strength("move_l")
@@ -83,6 +87,18 @@ func _physics_process(delta):
 		movement = velocity + gravity_vec
 	
 		move_and_slide_with_snap(movement, snap, Vector3.UP)
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 	
 	
 	

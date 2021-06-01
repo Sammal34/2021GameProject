@@ -25,7 +25,7 @@ ambient_light_color = Color( 0.894118, 0.960784, 0.968627, 1 )
 [node name="World" type="Spatial"]
 
 [node name="FPS" parent="." instance=ExtResource( 1 )]
-transform = Transform( 0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 2, 1.12518, 0 )
+transform = Transform( -2.18557e-08, 0, 0.5, 0, 0.5, 0, -0.5, 0, -2.18557e-08, 1, 1.12518, 0 )
 
 [node name="DirectionalLight" type="DirectionalLight" parent="."]
 transform = Transform( 0.930947, 0.182577, 0.316232, -0.365153, 0.465474, 0.806224, 0, -0.866025, 0.5, -1, 8.51571, 7 )
