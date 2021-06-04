@@ -20,6 +20,7 @@ var damage = 100
 onready var aimcast = $Head/Camera/AimCast
 onready var muzzle = $Head/Gun/Muzzle
 onready var bullet = preload("res://Bullet.tscn")
+onready var hit = preload("res://WallHit.tscn")
 
 
 onready var head = $Head
@@ -54,15 +55,12 @@ func _physics_process(delta):
 			print("swagnus")
 			
 			if aimcast.is_colliding():
-				var b = bullet.instance()
+				var b = hit.instance()
 				get_tree().get_root().add_child(b)
-				b.look_at(aimcast.get_collision_point(), Vector3.UP)
-				b.shoot = true
+				b.set_translation(aimcast.get_collision_point())
+				#b.shoot = true
 				print("AMONGUS")
-				var h_rot = global_transform.basis.get_euler().y
-				var f_input = Input.get_action_strength("move_bw") - Input.get_action_strength("move_fw")
-				var h_input = Input.get_action_strength("move_r") - Input.get_action_strength("move_l")
-				direction = Vector3(h_input, 0, f_input).rotated(Vector3.UP, h_rot).normalized()
+				
 		var h_rot = global_transform.basis.get_euler().y
 		var f_input = Input.get_action_strength("move_bw") - Input.get_action_strength("move_fw")
 		var h_input = Input.get_action_strength("move_r") - Input.get_action_strength("move_l")
