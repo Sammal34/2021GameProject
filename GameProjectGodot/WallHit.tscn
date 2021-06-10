@@ -5,18 +5,18 @@ direction = Vector3( 0, 0, 0 )
 gravity = Vector3( 0, 0, 0 )
 angular_velocity_random = 0.31
 
-[sub_resource type="Gradient" id=3]
+[sub_resource type="Gradient" id=2]
 offsets = PoolRealArray( 0, 0.315068, 0.589041, 1 )
 colors = PoolColorArray( 1, 0.496155, 0.0078125, 1, 1, 0.356714, 0.00561685, 1, 1, 0.333035, 0.00524401, 1, 1, 0, 0, 1 )
 
-[sub_resource type="GradientTexture" id=4]
-gradient = SubResource( 3 )
+[sub_resource type="GradientTexture" id=3]
+gradient = SubResource( 2 )
 
-[sub_resource type="SpatialMaterial" id=5]
-albedo_texture = SubResource( 4 )
+[sub_resource type="SpatialMaterial" id=4]
+albedo_texture = SubResource( 3 )
 
-[sub_resource type="SphereMesh" id=2]
-material = SubResource( 5 )
+[sub_resource type="SphereMesh" id=5]
+material = SubResource( 4 )
 radius = 0.1
 height = 0.1
 radial_segments = 6
@@ -30,4 +30,4 @@ speed_scale = 12.04
 explosiveness = 0.67
 randomness = 0.64
 process_material = SubResource( 1 )
-draw_pass_1 = SubResource( 2 )
+draw_pass_1 = SubResource( 5 )
