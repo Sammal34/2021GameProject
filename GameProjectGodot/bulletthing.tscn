@@ -1,24 +1,33 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=7 format=2]
 
-[sub_resource type="SpatialMaterial" id=1]
-flags_unshaded = true
-vertex_color_use_as_albedo = true
-params_billboard_mode = 1
+[ext_resource path="res://circle.png" type="Texture" id=1]
 
-[sub_resource type="ParticlesMaterial" id=2]
-next_pass = SubResource( 1 )
+[sub_resource type="Gradient" id=1]
+offsets = PoolRealArray( 0, 0.306502, 0.696594, 1 )
+colors = PoolColorArray( 1, 1, 1, 1, 0.973633, 0.751581, 0.29285, 1, 1, 0, 0, 1, 0.27832, 0.27832, 0.27832, 1 )
+
+[sub_resource type="GradientTexture" id=2]
+gradient = SubResource( 1 )
+
+[sub_resource type="ParticlesMaterial" id=3]
 emission_shape = 1
 emission_sphere_radius = 0.25
 gravity = Vector3( 0, 0, 0 )
 initial_velocity = 2.0
+color_ramp = SubResource( 2 )
 
-[sub_resource type="SphereMesh" id=3]
-radius = 0.75
-height = 1.5
+[sub_resource type="SpatialMaterial" id=4]
+flags_transparent = true
+flags_unshaded = true
+params_billboard_mode = 1
+albedo_texture = ExtResource( 1 )
+
+[sub_resource type="QuadMesh" id=5]
+material = SubResource( 4 )
 
 [node name="Spatial" type="Spatial"]
 
 [node name="Particles" type="Particles" parent="."]
 local_coords = false
-process_material = SubResource( 2 )
-draw_pass_1 = SubResource( 3 )
+process_material = SubResource( 3 )
+draw_pass_1 = SubResource( 5 )
