@@ -60,7 +60,8 @@ func _physics_process(delta):
 				b.set_translation(aimcast.get_collision_point())
 				#b.shoot = true
 				print("AMONGUS")
-				
+				if aimcast.is_colliding("Enemy.tscn"):
+					queue_free()
 		var h_rot = global_transform.basis.get_euler().y
 		var f_input = Input.get_action_strength("move_bw") - Input.get_action_strength("move_fw")
 		var h_input = Input.get_action_strength("move_r") - Input.get_action_strength("move_l")
