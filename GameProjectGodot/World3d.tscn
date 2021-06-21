@@ -30,7 +30,7 @@ data = PoolVector3Array( -2.5, 0, 2.2, -2.5, 0.1, 2.4, -2.5, 0, 2.5, -2.5, 0, 2,
 [node name="World" type="Spatial"]
 
 [node name="FPS" parent="." instance=ExtResource( 1 )]
-transform = Transform( -2.18557e-08, 0, 0.5, 0, 0.5, 0, -0.5, 0, -2.18557e-08, 1, 1.12518, -3 )
+transform = Transform( -2.84124e-08, 0, 0.65, 0, 0.65, 0, -0.65, 0, -2.84124e-08, 1, 1.12518, -3 )
 
 [node name="DirectionalLight" type="DirectionalLight" parent="."]
 transform = Transform( 0.930947, 0.182577, 0.316232, -0.365153, 0.465474, 0.806224, 0, -0.866025, 0.5, -1, 8.51571, 7 )
@@ -45,7 +45,7 @@ near = 0.21
 environment = SubResource( 1 )
 
 [node name="Enemy" parent="." instance=ExtResource( 4 )]
-transform = Transform( 0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 1, 0.25, 2 )
+transform = Transform( 0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -3, 0.25, -4 )
 
 [node name="Navigation" type="Navigation" parent="."]
 
