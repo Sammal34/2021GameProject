@@ -7,7 +7,6 @@ var path = []
 var current_node = 0
 var speed = 2
 
-
 func _ready():
 #	print(nav)
 #	print(path)
@@ -29,8 +28,7 @@ func _physics_process(delta):
 func update_path(target_position):
 	path = nav.get_simple_path(global_transform.origin, target_position)
 	
-	
-	
+
 
 func _on_Timer_timeout():
 	print("lookin for da playa")
