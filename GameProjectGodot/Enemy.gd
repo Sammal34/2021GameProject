@@ -33,3 +33,7 @@ func update_path(target_position):
 func _on_Timer_timeout():
 	print("lookin for da playa")
 	update_path(player.global_transform.origin)
+
+
+func _on_Hitting_body_entered(body):
+	pass # Replace with function body.

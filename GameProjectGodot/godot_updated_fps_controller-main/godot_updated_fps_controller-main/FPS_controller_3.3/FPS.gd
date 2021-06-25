@@ -16,6 +16,7 @@ var gravity_vec = Vector3()
 var movement = Vector3()
 var damage = 100
 
+var health = 100
 
 onready var aimcast = $Head/Camera/AimCast
 onready var muzzle = $Head/Gun/Muzzle

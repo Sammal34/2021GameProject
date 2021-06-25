@@ -8,6 +8,7 @@
 albedo_color = Color( 0.294118, 0.682353, 0.152941, 1 )
 
 [sub_resource type="CapsuleShape" id=3]
+radius = 2.0
 
 [node name="Enemy" type="KinematicBody"]
 script = ExtResource( 1 )
@@ -22,6 +23,14 @@ transform = Transform( 1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 1.4,
 shape = SubResource( 3 )
 
 [node name="Timer" type="Timer" parent="."]
+wait_time = 0.5
 autostart = true
 
+[node name="Hitting" type="Area" parent="."]
+transform = Transform( 1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 1.4, 0 )
+
+[node name="Collision" type="CollisionShape" parent="Hitting"]
+shape = SubResource( 3 )
+
 [connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
+[connection signal="body_entered" from="Hitting" to="." method="_on_Hitting_body_entered"]
