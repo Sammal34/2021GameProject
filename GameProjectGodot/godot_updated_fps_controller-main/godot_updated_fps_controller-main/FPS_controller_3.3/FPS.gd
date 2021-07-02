@@ -75,7 +75,6 @@ func _physics_process(delta):
 			snap = Vector3.DOWN
 			accel = accel_type["air"]
 			gravity_vec += Vector3.DOWN * gravity * delta
-		
 		if Input.is_action_just_pressed("Jump") and is_on_floor():
 			snap = Vector3.ZERO
 			gravity_vec = Vector3.UP * jump
@@ -87,16 +86,6 @@ func _physics_process(delta):
 		move_and_slide_with_snap(movement, snap, Vector3.UP)
 	
 	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
+func _on_Area_area_entered(area):
+	if area.is_in_group("Enemy"):
+		queue_free()
