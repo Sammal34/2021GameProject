@@ -19,7 +19,7 @@ func _physics_process(delta):
 	
 	if current_node < path.size():
 		var direction: Vector3 = path[current_node] - global_transform.origin
-		if direction.length() < 1:
+		if direction.length() <= .1:
 			current_node += 1
 		else:
 #			print("Dir: ", direction)
@@ -36,4 +36,5 @@ func _on_Timer_timeout():
 
 
 func _on_Hitting_body_entered(body):
-	pass # Replace with function body.
+	if body.is_in_group("Player"):
+		queue_free() # Replace with function body.

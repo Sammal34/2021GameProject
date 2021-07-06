@@ -88,4 +88,4 @@ func _physics_process(delta):
 	
 func _on_Area_area_entered(area):
 	if area.is_in_group("Enemy"):
-		queue_free()
+		area.queue_free()

@@ -8,7 +8,6 @@
 albedo_color = Color( 0.294118, 0.682353, 0.152941, 1 )
 
 [sub_resource type="CapsuleShape" id=3]
-radius = 2.0
 
 [node name="Enemy" type="KinematicBody" groups=[
 "Enemy",
