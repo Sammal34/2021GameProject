@@ -7,8 +7,8 @@ signal depleted
 export(int) var max_amount = 10 setget set_max
 onready var current = max_amount setget set_current 
 
-#func _ready():
-#	_initialize()
+func _ready():
+	_initialize()
 
 
 func set_max(new_max):
