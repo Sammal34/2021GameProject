@@ -54,7 +54,8 @@ func _physics_process(delta):
 		var direction = Vector3()
 		if Input.is_action_just_pressed("fire"):
 			print("swagnus")
-			
+			var musicNode = $Gunshot
+			musicNode.play()
 			if aimcast.is_colliding():
 				var b = hit.instance()
 				get_tree().get_root().add_child(b)
@@ -89,3 +90,5 @@ func _physics_process(delta):
 func _on_Area_area_entered(area):
 	if area.is_in_group("Enemy"):
 		area.queue_free()
+
+

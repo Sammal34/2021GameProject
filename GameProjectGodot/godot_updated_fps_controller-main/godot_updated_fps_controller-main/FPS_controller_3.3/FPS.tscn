@@ -1,7 +1,8 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://godot_updated_fps_controller-main/godot_updated_fps_controller-main/FPS_controller_3.3/FPS.gd" type="Script" id=1]
 [ext_resource path="res://weaponpack_assets/Models/machinegun.obj" type="ArrayMesh" id=2]
+[ext_resource path="res://vine-boom.mp3" type="AudioStream" id=3]
 
 [sub_resource type="CapsuleShape" id=1]
 radius = 0.5
@@ -94,5 +95,9 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.000577621, 0.00581646, 0.053
 [node name="CollisionShape" type="CollisionShape" parent="Area"]
 visible = false
 shape = SubResource( 3 )
+
+[node name="Gunshot" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 3 )
+volume_db = 24.0
 
 [connection signal="area_entered" from="Area" to="." method="_on_Area_area_entered"]
