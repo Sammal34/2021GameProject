@@ -12,6 +12,7 @@ func _ready():
 
 
 func set_max(new_max):
+	max_amount = new_max
 	max_amount = max(1, new_max)
 	emit_signal("max_changed", max_amount)
 
