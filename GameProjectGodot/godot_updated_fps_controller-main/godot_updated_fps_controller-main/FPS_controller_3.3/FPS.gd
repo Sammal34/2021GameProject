@@ -6,6 +6,8 @@ onready var accel = accel_type["default"]
 var gravity = 20
 var jump = 6.5
 
+
+
 var cam_accel = 40
 var mouse_sense = 0.1
 var snap
@@ -89,6 +91,7 @@ func _physics_process(delta):
 	
 func _on_Area_area_entered(area):
 	if area.is_in_group("Enemy"):
+		health =-10
 		area.queue_free()
 
 

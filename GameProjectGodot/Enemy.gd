@@ -37,4 +37,5 @@ func _on_Timer_timeout():
 
 func _on_Hitting_body_entered(body):
 	if body.is_in_group("Player"):
+		
 		queue_free() # Replace with function body.
