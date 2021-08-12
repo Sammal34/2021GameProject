@@ -16,6 +16,3 @@ margin_left = -150.0
 margin_top = -15.0
 margin_right = 150.0
 margin_bottom = 15.0
-
-[connection signal="changed" from="Health" to="HealthBar" method="set_value"]
-[connection signal="max_changed" from="Health" to="HealthBar" method="set_max"]

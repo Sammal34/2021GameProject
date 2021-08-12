@@ -18,6 +18,10 @@ config/name="Game Project Godot"
 run/main_scene="res://TitleScreen.tscn"
 config/icon="res://icon.png"
 
+[autoload]
+
+PlayerHealth="*res://Health/Health.gd"
+
 [display]
 
 window/size/width=1280

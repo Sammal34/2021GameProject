@@ -40,6 +40,9 @@ func _input(event):
 		head.rotate_x(deg2rad(-event.relative.y * mouse_sense))
 		head.rotation.x = clamp(head.rotation.x, deg2rad(-89), deg2rad(89))
 
+	if PlayerHealth.health <=0:
+		queue_free()
+
 func _process(delta):
 	#camera physics interpolation to reduce physics jitter on high refresh-rate monitors
 	if Engine.get_frames_per_second() > Engine.iterations_per_second:
@@ -89,9 +92,12 @@ func _physics_process(delta):
 		move_and_slide_with_snap(movement, snap, Vector3.UP)
 	
 	
-func _on_Area_area_entered(area):
-	if area.is_in_group("Enemy"):
-		health =-10
-		area.queue_free()
+	
+#func _on_Area_area_entered(area):
+#	if area.is_in_group("Enemy"):
+#		print("Hit Me")
+#		PlayerHealth.take_damage(10)
+#
+#		area.queue_free()
 
 
