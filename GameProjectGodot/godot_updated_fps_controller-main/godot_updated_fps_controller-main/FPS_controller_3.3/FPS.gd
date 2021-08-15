@@ -7,7 +7,7 @@ var gravity = 20
 var jump = 6.5
 
 
-
+var current_weapon = 1
 var cam_accel = 40
 var mouse_sense = 0.1
 var snap
@@ -24,7 +24,8 @@ onready var aimcast = $Head/Camera/AimCast
 onready var muzzle = $Head/Gun/Muzzle
 onready var bullet = preload("res://Bullet.tscn")
 onready var hit = preload("res://WallHit.tscn")
-
+onready var Gun = $Head/Camera/Hand/Gun
+onready var Hammer = $Head/Camera/Hand/Hammers
 
 onready var head = $Head
 onready var camera = $Head/Camera
@@ -39,11 +40,45 @@ func _input(event):
 		rotate_y(deg2rad(-event.relative.x * mouse_sense))
 		head.rotate_x(deg2rad(-event.relative.y * mouse_sense))
 		head.rotation.x = clamp(head.rotation.x, deg2rad(-89), deg2rad(89))
+	if event is InputEventMouseButton:
+		if event.is_pressed():
+			if event.button_index == BUTTON_WHEEL_UP:
+				if current_weapon < 2:
+					current_weapon += 1
+				else:
+					current_weapon = 1
+			if event.button_index == BUTTON_WHEEL_DOWN:
+				if current_weapon < 1:
+					current_weapon -= 1
+				else:
+					current_weapon = 2
+
 
 	if PlayerHealth.health <=0:
 		queue_free()
 
+func weapon_select():
+	if Input.is_action_just_pressed("weapon1"):
+		current_weapon = 1
+	elif Input.is_action_just_pressed("weapon2"):
+		current_weapon = 2
+	
+	if current_weapon == 1:
+		Gun.visible = true
+		Gun.shoot()
+	else:
+		Gun.visible = false
+	
+	if current_weapon == 2:
+		Hammer.visible = true
+	else:
+		Hammer.visible = false
+	
+	
+
 func _process(delta):
+	
+	weapon_select()
 	#camera physics interpolation to reduce physics jitter on high refresh-rate monitors
 	if Engine.get_frames_per_second() > Engine.iterations_per_second:
 		camera.set_as_toplevel(true)
@@ -58,15 +93,15 @@ func _physics_process(delta):
 	#get keyboard input
 		var direction = Vector3()
 		if Input.is_action_just_pressed("fire"):
-			print("swagnus")
+#			print("swagnus")
 			var musicNode = $Gunshot
 			musicNode.play()
-			if aimcast.is_colliding():
-				var b = hit.instance()
-				get_tree().get_root().add_child(b)
-				b.set_translation(aimcast.get_collision_point())
-				#b.shoot = true
-				print("AMONGUS")
+#			if aimcast.is_colliding():
+#				var b = hit.instance()
+#				get_tree().get_root().add_child(b)
+#				b.set_translation(aimcast.get_collision_point())
+#				#b.shoot = true
+#				print("AMONGUS")
 		var h_rot = global_transform.basis.get_euler().y
 		var f_input = Input.get_action_strength("move_bw") - Input.get_action_strength("move_fw")
 		var h_input = Input.get_action_strength("move_r") - Input.get_action_strength("move_l")
