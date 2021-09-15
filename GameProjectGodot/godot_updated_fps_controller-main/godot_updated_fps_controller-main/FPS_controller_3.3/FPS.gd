@@ -1,5 +1,7 @@
 extends KinematicBody
 
+var melee_damage = 50
+
 var speed = 4
 var accel_type = {"default": 40, "air": 1}
 onready var accel = accel_type["default"]
@@ -27,8 +29,18 @@ onready var hit = preload("res://WallHit.tscn")
 onready var Gun = $Head/Camera/Hand/Gun
 onready var Hammer = $Head/Camera/Hand/Hammers
 
+onready var melee_anim = $AnimationPlayer
+onready var hitbox = $Head/Camera/Hitbox
+
+
 onready var head = $Head
 onready var camera = $Head/Camera
+
+func melee():
+	if Input.is_action_just_pressed("fire"):
+		if not melee_anim.is_playing():
+			melee_anim.play("Attack")
+			melee_anim.queue("Return")
 
 func _ready():
 	#hides the cursor
@@ -62,6 +74,10 @@ func weapon_select():
 		current_weapon = 1
 	elif Input.is_action_just_pressed("weapon2"):
 		current_weapon = 2
+		if Input.is_action_just_pressed("fire"):
+			if not melee_anim.is_playing():
+				melee_anim.play("Attack")
+				melee_anim.queue("Return")
 	
 	if current_weapon == 1:
 		Gun.visible = true
@@ -90,6 +106,7 @@ func _process(delta):
 		camera.global_transform = head.global_transform
 		
 func _physics_process(delta):
+	
 	#get keyboard input
 		var direction = Vector3()
 		if Input.is_action_just_pressed("fire"):
@@ -106,6 +123,7 @@ func _physics_process(delta):
 		var f_input = Input.get_action_strength("move_bw") - Input.get_action_strength("move_fw")
 		var h_input = Input.get_action_strength("move_r") - Input.get_action_strength("move_l")
 		direction = Vector3(h_input, 0, f_input).rotated(Vector3.UP, h_rot).normalized()
+	
 	
 	#jumping and gravity
 		if is_on_floor():
@@ -125,7 +143,7 @@ func _physics_process(delta):
 		movement = velocity + gravity_vec
 	
 		move_and_slide_with_snap(movement, snap, Vector3.UP)
-	
+	melee()
 	
 	
 #func _on_Area_area_entered(area):
