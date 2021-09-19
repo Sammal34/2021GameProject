@@ -6,9 +6,10 @@ onready var player = $"../FPS" as KinematicBody
 var path = []
 var current_node = 0
 var speed = 2
+var health = 5
 
 func _ready():
-#	print(nav)
+	print ("value")
 #	print(path)
 	pass
 
@@ -39,3 +40,8 @@ func _on_Hitting_body_entered(body):
 	if body.is_in_group("Player"):
 		PlayerHealth.take_damage(10)
 #		queue_free() # Replace with function body.
+
+
+func _on_Health_value_changed(value):
+	print("value")
+	pass # Replace with function body.

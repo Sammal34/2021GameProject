@@ -12,10 +12,10 @@ height = 1.00378
 [sub_resource type="CapsuleMesh" id=2]
 radius = 0.5
 
-[sub_resource type="BoxShape" id=4]
+[sub_resource type="BoxShape" id=3]
 extents = Vector3( 0.487715, 0.381384, 1.16482 )
 
-[sub_resource type="CapsuleShape" id=3]
+[sub_resource type="CapsuleShape" id=4]
 height = 0.002
 
 [sub_resource type="Animation" id=5]
@@ -48,7 +48,7 @@ tracks/0/keys = {
 "times": PoolRealArray( 0, 0.1 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
-"values": [ Vector3( 0, -90, 0 ), Vector3( 0, -90, 50 ) ]
+"values": [ Vector3( 0, -90, 50 ), Vector3( 0, -90, 0 ) ]
 }
 
 [node name="FPS" type="KinematicBody" groups=[
@@ -83,7 +83,7 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.12398, 0 )
 [node name="Gun" parent="Head/Camera/Hand" instance=ExtResource( 2 )]
 
 [node name="Hammers" parent="Head/Camera/Hand" instance=ExtResource( 4 )]
-transform = Transform( -8.42914e-08, 1.00455e-07, -3, 2.29813, 1.92836, 0, 1.92836, -2.29813, -1.31134e-07, 0.464681, 0.322253, -0.757696 )
+transform = Transform( -8.42913e-08, 1.00454e-07, -3, 2.29813, 1.92836, 0, 1.92836, -2.29813, -1.31134e-07, 0.464681, 0.322253, -0.757696 )
 
 [node name="Melee" type="Spatial" parent="Head/Camera/Hand"]
 
@@ -92,12 +92,12 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.12398, 0 )
 
 [node name="CollisionShape2" type="CollisionShape" parent="Head/Camera/Hitbox"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.567, -1.67526 )
-shape = SubResource( 4 )
+shape = SubResource( 3 )
 
 [node name="Area" type="Area" parent="."]
 
 [node name="CollisionShape" type="CollisionShape" parent="Area"]
-shape = SubResource( 3 )
+shape = SubResource( 4 )
 
 [node name="Gunshot" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 3 )
