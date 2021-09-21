@@ -26,7 +26,7 @@ var damage = 100
 
 var health = 100
 
-onready var swingcast = $Head/Camera/Hand/Hammers/swing
+onready var swingcast = $Head/Camera/Hand/swing
 onready var pcap = $CollisionShape
 onready var aimcast = $Head/Camera/Hand/Gun/AimCast
 onready var muzzle = $Head/Gun/Muzzle
@@ -126,7 +126,7 @@ func _physics_process(delta):
 					if swingcast.get_collider().is_in_group("Enemy"):
 						print("hit enemy")
 						var enemy = swingcast.get_collider()
-						enemy.health -=1
+						enemy.health -=2
 						if enemy.health <=0:
 							enemy.queue_free()
 							EnemyHealth =- 1
