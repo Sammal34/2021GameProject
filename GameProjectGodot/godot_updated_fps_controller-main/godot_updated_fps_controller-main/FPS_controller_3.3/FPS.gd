@@ -26,8 +26,9 @@ var damage = 100
 
 var health = 100
 
+onready var swingcast = $Head/Camera/Hand/Hammers/swing
 onready var pcap = $CollisionShape
-onready var aimcast = $Head/Camera/AimCast
+onready var aimcast = $Head/Camera/Hand/Gun/AimCast
 onready var muzzle = $Head/Gun/Muzzle
 onready var bullet = preload("res://Bullet.tscn")
 onready var hit = preload("res://WallHit.tscn")
@@ -118,18 +119,31 @@ func _physics_process(delta):
 		speed = default_move_speed
 	#get keyboard input
 		var direction = Vector3()
-		if Input.is_action_just_pressed("fire"):
+		if current_weapon ==2:
+			if Input.is_action_just_pressed("fire"):
+				print("swing")
+				if swingcast.is_colliding():
+					if swingcast.get_collider().is_in_group("Enemy"):
+						print("hit enemy")
+						var enemy = swingcast.get_collider()
+						enemy.health -=1
+						if enemy.health <=0:
+							enemy.queue_free()
+							EnemyHealth =- 1
+							
+		if current_weapon == 1:
+			if Input.is_action_just_pressed("fire"):
 #			print("swagnus")
-			var musicNode = $Gunshot
-			musicNode.play()
-			if aimcast.is_colliding():
-				if aimcast.get_collider().is_in_group("Enemy"):
-					print("hit enemy")
-					var enemy = aimcast.get_collider()
-					enemy.health -=1
-					if enemy.health <=0:
-						enemy.queue_free()
-						EnemyHealth =- 1
+				var musicNode = $Gunshot
+				musicNode.play()
+				if aimcast.is_colliding():
+					if aimcast.get_collider().is_in_group("Enemy"):
+						print("hit enemy")
+						var enemy = aimcast.get_collider()
+						enemy.health -=1
+						if enemy.health <=0:
+							enemy.queue_free()
+							EnemyHealth =- 1
 #				var b = hit.instance()
 #				get_tree().get_root().add_child(b)
 #				b.set_translation(aimcast.get_collision_point())

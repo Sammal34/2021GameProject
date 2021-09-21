@@ -56,6 +56,15 @@ environment = SubResource( 1 )
 [node name="Enemy" parent="." instance=ExtResource( 4 )]
 transform = Transform( 0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, -3, 0.25, -5 )
 
+[node name="Enemy3" parent="." instance=ExtResource( 4 )]
+transform = Transform( 0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, -3, 0.25, 5 )
+
+[node name="Enemy4" parent="." instance=ExtResource( 4 )]
+transform = Transform( 0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, -3, 0.25, 1 )
+
+[node name="Enemy5" parent="." instance=ExtResource( 4 )]
+transform = Transform( 0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, -3, 0.25, 0 )
+
 [node name="Enemy2" parent="." instance=ExtResource( 4 )]
 transform = Transform( 0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, -3, 0.25, 6 )
 
