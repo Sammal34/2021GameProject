@@ -1,0 +1,19 @@
+[remap]
+
+importer="wavefront_obj"
+type="Mesh"
+path="res://.import/doctor_zombie.obj-7152b0fa77432b1ff7ca12df69f9c79c.mesh"
+
+[deps]
+
+files=[ "res://.import/doctor_zombie.obj-7152b0fa77432b1ff7ca12df69f9c79c.mesh" ]
+
+source_file="res://ZombieAsset/obj/doctor_zombie/doctor_zombie.obj"
+dest_files=[ "res://.import/doctor_zombie.obj-7152b0fa77432b1ff7ca12df69f9c79c.mesh", "res://.import/doctor_zombie.obj-7152b0fa77432b1ff7ca12df69f9c79c.mesh" ]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3( 1, 1, 1 )
+offset_mesh=Vector3( 0, 0, 0 )
+optimize_mesh=true

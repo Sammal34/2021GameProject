@@ -1,0 +1,19 @@
+[remap]
+
+importer="wavefront_obj"
+type="Mesh"
+path="res://.import/zombie_worker.obj-5ce35291f1994b78d1a8a40bef83eca2.mesh"
+
+[deps]
+
+files=[ "res://.import/zombie_worker.obj-5ce35291f1994b78d1a8a40bef83eca2.mesh" ]
+
+source_file="res://ZombieAsset/obj/zombie_worker/zombie_worker.obj"
+dest_files=[ "res://.import/zombie_worker.obj-5ce35291f1994b78d1a8a40bef83eca2.mesh", "res://.import/zombie_worker.obj-5ce35291f1994b78d1a8a40bef83eca2.mesh" ]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3( 1, 1, 1 )
+offset_mesh=Vector3( 0, 0, 0 )
+optimize_mesh=true

@@ -1,0 +1,19 @@
+[remap]
+
+importer="wavefront_obj"
+type="Mesh"
+path="res://.import/zombie_city.obj-fd84ba1a2cff9966aa71792a98dfd615.mesh"
+
+[deps]
+
+files=[ "res://.import/zombie_city.obj-fd84ba1a2cff9966aa71792a98dfd615.mesh" ]
+
+source_file="res://ZombieAsset/obj/zombie_city/zombie_city.obj"
+dest_files=[ "res://.import/zombie_city.obj-fd84ba1a2cff9966aa71792a98dfd615.mesh", "res://.import/zombie_city.obj-fd84ba1a2cff9966aa71792a98dfd615.mesh" ]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3( 1, 1, 1 )
+offset_mesh=Vector3( 0, 0, 0 )
+optimize_mesh=true

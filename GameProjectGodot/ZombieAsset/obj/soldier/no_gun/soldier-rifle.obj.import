@@ -1,0 +1,19 @@
+[remap]
+
+importer="wavefront_obj"
+type="Mesh"
+path="res://.import/soldier-rifle.obj-72d4ce614fbc9f2d1e4d09d56487ea98.mesh"
+
+[deps]
+
+files=[ "res://.import/soldier-rifle.obj-72d4ce614fbc9f2d1e4d09d56487ea98.mesh" ]
+
+source_file="res://ZombieAsset/obj/soldier/no_gun/soldier-rifle.obj"
+dest_files=[ "res://.import/soldier-rifle.obj-72d4ce614fbc9f2d1e4d09d56487ea98.mesh", "res://.import/soldier-rifle.obj-72d4ce614fbc9f2d1e4d09d56487ea98.mesh" ]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3( 1, 1, 1 )
+offset_mesh=Vector3( 0, 0, 0 )
+optimize_mesh=true

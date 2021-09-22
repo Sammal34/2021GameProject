@@ -1,0 +1,19 @@
+[remap]
+
+importer="wavefront_obj"
+type="Mesh"
+path="res://.import/soldier.obj-7de6e430947009f18c87f3b2016cdeef.mesh"
+
+[deps]
+
+files=[ "res://.import/soldier.obj-7de6e430947009f18c87f3b2016cdeef.mesh" ]
+
+source_file="res://ZombieAsset/obj/soldier/soldier.obj"
+dest_files=[ "res://.import/soldier.obj-7de6e430947009f18c87f3b2016cdeef.mesh", "res://.import/soldier.obj-7de6e430947009f18c87f3b2016cdeef.mesh" ]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3( 1, 1, 1 )
+offset_mesh=Vector3( 0, 0, 0 )
+optimize_mesh=true
