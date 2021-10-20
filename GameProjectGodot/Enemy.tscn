@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://Enemy.gd" type="Script" id=1]
 [ext_resource path="res://ZombieGirl.tscn" type="PackedScene" id=2]
@@ -8,8 +8,11 @@
 [sub_resource type="SpatialMaterial" id=2]
 albedo_color = Color( 0.294118, 0.682353, 0.152941, 1 )
 
-[sub_resource type="CapsuleShape" id=3]
-height = 3.52355
+[sub_resource type="BoxShape" id=3]
+extents = Vector3( 1, 1, 2.50126 )
+
+[sub_resource type="BoxShape" id=4]
+extents = Vector3( 0.783136, 1, 2.81989 )
 
 [node name="Enemy" type="KinematicBody" groups=[
 "Enemy",
@@ -23,7 +26,7 @@ mesh = SubResource( 1 )
 material/0 = SubResource( 2 )
 
 [node name="CollisionShape" type="CollisionShape" parent="."]
-transform = Transform( 1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 2.51843, 0 )
+transform = Transform( 1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 2.61155, 0 )
 shape = SubResource( 3 )
 
 [node name="Timer" type="Timer" parent="."]
@@ -34,8 +37,8 @@ autostart = true
 transform = Transform( 1.1, 0, 0, 0, -4.80825e-08, -1.1, 0, 1.1, -4.80825e-08, 0, 2.4, 0 )
 
 [node name="Collision" type="CollisionShape" parent="Hitting"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -3.97376e-08, -0.90909 )
-shape = SubResource( 3 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -3.28542e-08, -0.751616 )
+shape = SubResource( 4 )
 
 [node name="ZombieGirl" parent="." instance=ExtResource( 2 )]
 transform = Transform( 100, 0, 0, 0, 100, 0, 0, 0, 100, 0, 0, 0 )

@@ -1,17 +1,33 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=8 format=2]
 
-[ext_resource path="res://fart.png" type="Texture" id=1]
+[ext_resource path="res://fonts/compass-pro-v1.1/CompassPro.ttf" type="DynamicFontData" id=1]
 [ext_resource path="res://fade_in/FadeIn.tscn" type="PackedScene" id=2]
 [ext_resource path="res://mario_kart_ds/Mario-Kart-DS.ttf" type="DynamicFontData" id=3]
+[ext_resource path="res://maxresdefault.jpg" type="Texture" id=4]
 [ext_resource path="res://Button.gd" type="Script" id=5]
 
 [sub_resource type="DynamicFont" id=1]
+size = 50
+outline_size = 5
+outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 1 )
+
+[sub_resource type="DynamicFont" id=2]
 size = 48
 font_data = ExtResource( 3 )
 
 [node name="TileScreen" type="Control"]
 anchor_right = 1.0
 anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Logo" type="TextureRect" parent="."]
+margin_right = 1280.0
+margin_bottom = 720.0
+texture = ExtResource( 4 )
+stretch_mode = 4
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -27,28 +43,36 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Logo" type="TextureRect" parent="Menu"]
+[node name="Label" type="Label" parent="Menu"]
 margin_right = 980.0
-margin_bottom = 140.0
-texture = ExtResource( 1 )
-stretch_mode = 4
+margin_bottom = 201.0
+custom_fonts/font = SubResource( 1 )
+text = "Amongst thou 3D tycoon
+Fortnite simulator Online
+free download (in the hood)
+(gone wrong)"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="CenterRow" type="HBoxContainer" parent="Menu"]
-margin_top = 144.0
+margin_top = 205.0
 margin_right = 980.0
 margin_bottom = 560.0
 size_flags_vertical = 3
 
 [node name="Buttons" type="VBoxContainer" parent="Menu/CenterRow"]
 margin_right = 980.0
-margin_bottom = 416.0
+margin_bottom = 355.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
 [node name="Button" type="Button" parent="Menu/CenterRow/Buttons"]
 margin_right = 980.0
 margin_bottom = 45.0
-custom_fonts/font = SubResource( 1 )
+custom_fonts/font = SubResource( 2 )
 text = "play"
 script = ExtResource( 5 )
 

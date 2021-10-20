@@ -126,11 +126,8 @@ func _physics_process(delta):
 					if swingcast.get_collider().is_in_group("Enemy"):
 						print("hit enemy")
 						var enemy = swingcast.get_collider()
-						enemy.health -=2
-						if enemy.health <=0:
-							enemy.queue_free()
-							EnemyHealth =- 1
-							
+						enemy.take_damage(1)
+						
 		if current_weapon == 1:
 			if Input.is_action_just_pressed("fire"):
 #			print("swagnus")

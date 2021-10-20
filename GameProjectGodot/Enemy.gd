@@ -13,6 +13,10 @@ func _ready():
 #	print(path)
 	pass
 
+#func set_rotation():
+#	Enemy.axis
+
+
 func _physics_process(delta):
 	
 #	if aimcast.is_colliding("Enemy.tscn"):
@@ -25,6 +29,8 @@ func _physics_process(delta):
 		else:
 #			print("Dir: ", direction)
 			look_at(get_parent().get_node("FPS").global_transform.origin,Vector3.UP)
+			rotation_degrees.x = 0
+			rotation_degrees.z = 0
 			move_and_slide(direction.normalized() * speed)
 			$ZombieGirl/AnimationPlayer.play("Zombie Running (1)-loop")
 	else:
