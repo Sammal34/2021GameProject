@@ -1,0 +1,19 @@
+[remap]
+
+importer="wavefront_obj"
+type="Mesh"
+path="res://.import/Muzzle.obj-2009d6ec3d0efd4eb729d8e860001ccf.mesh"
+
+[deps]
+
+files=[ "res://.import/Muzzle.obj-2009d6ec3d0efd4eb729d8e860001ccf.mesh" ]
+
+source_file="res://Muzzle.obj"
+dest_files=[ "res://.import/Muzzle.obj-2009d6ec3d0efd4eb729d8e860001ccf.mesh", "res://.import/Muzzle.obj-2009d6ec3d0efd4eb729d8e860001ccf.mesh" ]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3( 1, 1, 1 )
+offset_mesh=Vector3( 0, 0, 0 )
+optimize_mesh=true
